@@ -46,7 +46,11 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
             - configMapRef:
+                {{- if .Values.crowdstrikeConfig.existingConfigMap }}
+                name: {{ .Values.crowdstrikeConfig.existingConfigMap }}
+                {{- else }}
                 name: {{ include "cs-k8s-protection-agent.fullname" . }}
+                {{- end }}
             - secretRef:
                 {{- if .Values.crowdstrikeConfig.existingSecret }}
                 name: {{ .Values.crowdstrikeConfig.existingSecret }}

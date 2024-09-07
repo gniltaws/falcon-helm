@@ -1,3 +1,4 @@
+{{- if (not .Values.crowdstrikeConfig.existingConfigMap) -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -18,4 +19,4 @@ data:
   {{- if .Values.proxyConfig.NO_PROXY }}
   NO_PROXY: {{ .Values.proxyConfig.NO_PROXY }}
   {{- end }}
-
+{{- end }}

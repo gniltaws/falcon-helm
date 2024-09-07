@@ -50,6 +50,7 @@ crowdstrikeConfig:
   env: ""
   cid: ""
   dockerAPIToken: ""
+  existingConfigMap: ""
   existingSecret: ""
 
 proxyConfig:

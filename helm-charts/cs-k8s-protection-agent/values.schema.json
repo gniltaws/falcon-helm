@@ -146,6 +146,9 @@
                 "dockerAPIToken": {
                     "type": "string"
                 },
+                "existingConfigMap": {
+                    "type": "string"
+                }
                 "existingSecret": {
                     "type": "string"
                 }
