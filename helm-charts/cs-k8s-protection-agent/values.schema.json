@@ -148,7 +148,7 @@
                 },
                 "existingConfigMap": {
                     "type": "string"
-                }
+                },
                 "existingSecret": {
                     "type": "string"
                 }
