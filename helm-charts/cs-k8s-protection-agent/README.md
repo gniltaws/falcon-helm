@@ -238,3 +238,15 @@ If a proxy configuration is no longer required for the KPA, follow these steps t
     kubectl rollout restart deploy kpagent-cs-k8s-protection-agent -n falcon-kubernetes-protection
     ```
 
+### clusterName defaults to .Values.global.clusterName
+
+This would result in `AGENT_CLUSTER_NAME` being set to "myClusterName"
+
+```yaml
+# Values.yaml
+crowdstrikeConfig:
+  clusterName: ""
+  
+global:
+  clusterName: "myClusterName"
+```
