@@ -5,7 +5,11 @@ metadata:
   labels:
   {{- include "cs-k8s-protection-agent.labels" . | nindent 4 }}
 data:
+{{- if .Values.crowdstrikeConfig.clusterNameOverrideTemplate }}
+  AGENT_CLUSTER_NAME: {{ tpl .Values.crowdstrikeConfig.clusterNameOverrideTemplate . | quote }}
+{{- else }}
   AGENT_CLUSTER_NAME: {{ .Values.crowdstrikeConfig.clusterName | quote }}
+{{- end }}
   AGENT_DEBUG: {{ .Values.crowdstrikeConfig.enableDebug | default "false" | quote }}
   AGENT_ENV: {{ .Values.crowdstrikeConfig.env | quote }}
   AGENT_HELM_VERSION: {{ .Chart.Version | quote }}

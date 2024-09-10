@@ -237,4 +237,16 @@ If a proxy configuration is no longer required for the KPA, follow these steps t
     ```bash
     kubectl rollout restart deploy kpagent-cs-k8s-protection-agent -n falcon-kubernetes-protection
     ```
+### Override clusterName with a user-defined variable
+If you have a global variable for the cluster's name, as might happen in an ArgoCD environment, 
 
+Example with a global cluster name defined at `.Values.global.clustername`, reference it in clusterNameOverrideTemplate:
+```yaml
+# Values.yaml
+crowdstrikeConfig:
+  clusterName: ""
+  clusterNameOverrideTemplate: "{{ .Values.global.clusterName }}"
+
+global:
+  clusterName: azlab2
+```
