@@ -248,5 +248,5 @@ crowdstrikeConfig:
   clusterNameOverrideTemplate: "{{ .Values.global.clusterName }}"
 
 global:
-  clusterName: azlab2
+  clusterName: myClusterName
 ```
