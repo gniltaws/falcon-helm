@@ -238,3 +238,12 @@ If a proxy configuration is no longer required for the KPA, follow these steps t
     kubectl rollout restart deploy kpagent-cs-k8s-protection-agent -n falcon-kubernetes-protection
     ```
 
+## Specify an existing configmap instead
+
+Reference an already-existing configmap instead of creating one with this helm chart
+
+```yaml
+# Values.yaml
+crowdstrikeConfig:
+  existingConfigMap: <name_of_already_existing_configmap>
+```
